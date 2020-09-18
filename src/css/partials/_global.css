@@ -38,7 +38,7 @@
 .button.secondary-button{
   background: #fff;
   background-clip: padding-box;
-  transition: background .6s ease:
+  transition: background .6s ease;
 }
 .button.secondary-button:hover{
   background: var(--gradiente-color);

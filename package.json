@@ -1,0 +1,44 @@
+{
+  "name": "portafolio-brian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build":"rimraf dist &&  webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brian-Santeliz/portafolio-brian.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brian-Santeliz/portafolio-brian/issues"
+  },
+  "homepage": "https://github.com/Brian-Santeliz/portafolio-brian#readme",
+  "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "bootstrap": "^4.5.2",
+    "copy-webpack-plugin": "^6.1.0",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "font-awesome": "^4.7.0",
+    "gh-pages": "^3.1.0",
+    "google-fonts-webpack-plugin": "^0.4.4",
+    "html-loader": "^1.3.0",
+    "html-webpack-plugin": "^4.4.1",
+    "jquery": "^3.5.1",
+    "mini-css-extract-plugin": "^0.11.2",
+    "popper.js": "^1.16.1",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
