@@ -38,7 +38,7 @@
 /* Banner Area */
 
 .site-main .site-banner{
-  background: url(../img/banner/home-banner.png) no-repeat 5% 50%;
+  background: url(../img/home-banner.png) no-repeat 5% 50%;
 }
 .site-main .site-banner .site-title h3{
   padding-top: 35%;
@@ -55,6 +55,7 @@
   padding: 7rem 0;
   width: 90rem;
 }
+
 /* Banner Area */
 
 /* About Area */
