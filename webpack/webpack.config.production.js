@@ -3,8 +3,8 @@ const assets = require("../src/assets");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   optimization: {
@@ -14,7 +14,7 @@ module.exports = {
         cache: true,
         parallel: true,
         sourceMap: true,
-        parallel:4,
+        parallel: 4,
         minimizerOptions: {
           preset: [
             "default",
@@ -25,26 +25,25 @@ module.exports = {
         },
       }),
       new TerserPlugin({
-        cache:true,
-        parallel:true,
-        parallel:4,
-        sourceMap:true,
-        terserOptions:{
-          ecma:undefined,
-          parse:{},
-          compress:{},
-          mangle:true,
-          module:false,
-          output:{
-            comments:false
+        cache: true,
+        parallel: true,
+        parallel: 4,
+        sourceMap: true,
+        terserOptions: {
+          ecma: undefined,
+          parse: {},
+          compress: {},
+          mangle: true,
+          module: false,
+          output: {
+            comments: false,
           },
-          toplevel:false,
-          nameCache:null,
-          ie8:false,
-          keep_classnames:undefined,
-          keep_fnames:false,
-          safari10:false,
-
+          toplevel: false,
+          nameCache: null,
+          ie8: false,
+          keep_classnames: undefined,
+          keep_fnames: false,
+          safari10: false,
         },
       }),
     ],
@@ -59,13 +58,40 @@ module.exports = {
     rules: [
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-          outputPath: "img/",
-          publicPath: "img/",
-          useRelativePath: true,
-        },
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "img/",
+              useRelativePath: true,
+            },
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              optipng: {
+                enabled: true,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -83,7 +109,6 @@ module.exports = {
         loader: "file-loader",
       },
     ],
-    
   },
   plugins: [
     new HtmlWebpackPlugin({
