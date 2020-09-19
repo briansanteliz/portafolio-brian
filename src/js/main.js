@@ -1,6 +1,5 @@
-import $ from '../libs/jquery.min.js'
-import '../isotope/isotope.min.js'
-$(document).ready(function(){
+  
+  $(document).ready(function(){
 
   // select the button
    let $btns = $('.project-area .button-group button');

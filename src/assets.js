@@ -5,7 +5,6 @@ const CSS = [
 
 const JS = [
     'bootstrap/dist/js/bootstrap.min.js',
-    'jquery/dist/jquery.min.js',
     'popper.js/dist/popper.min.js',
 ]
 

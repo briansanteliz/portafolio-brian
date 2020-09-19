@@ -49,7 +49,7 @@ module.exports = {
     ],
   },
   mode: "production",
-  entry: { main: ["./src/index.js", "@babel/polyfill"] },
+  entry: { main: ["./src/index.js",  "@babel/polyfill"] },
   output: {
     filename: "js/bundle.js",
     path: path.join(__dirname, "../dist"),
