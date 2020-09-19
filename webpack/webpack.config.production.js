@@ -3,8 +3,52 @@ const assets = require("../src/assets");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+        parallel:4,
+        minimizerOptions: {
+          preset: [
+            "default",
+            {
+              discardComments: { removeAll: true },
+            },
+          ],
+        },
+      }),
+      new TerserPlugin({
+        cache:true,
+        parallel:true,
+        parallel:4,
+        sourceMap:true,
+        terserOptions:{
+          ecma:undefined,
+          parse:{},
+          compress:{},
+          mangle:true,
+          module:false,
+          output:{
+            comments:false
+          },
+          toplevel:false,
+          nameCache:null,
+          ie8:false,
+          keep_classnames:undefined,
+          keep_fnames:false,
+          safari10:false,
+
+        },
+      }),
+    ],
+  },
   mode: "production",
   entry: { main: ["./src/index.js", "@babel/polyfill"] },
   output: {
@@ -39,25 +83,7 @@ module.exports = {
         loader: "file-loader",
       },
     ],
-    optimization: {
-      minimize: true,
-      minimizer: [
-        new CssMinimizerPlugin({
-          cache: true,
-          paraller: true,
-          sourceMap: true,
-          minimizerOptions: {
-            preset: [
-              "default",
-              {
-                discardComments: { removeAll: true },
-              },
-            ],
-          },
-        }),
-        new TerserPlugin(),
-      ],
-    },
+    
   },
   plugins: [
     new HtmlWebpackPlugin({
