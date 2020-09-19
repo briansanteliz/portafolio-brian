@@ -1,6 +1,7 @@
-import('./css/style.css')
-import('./libs/bootstrap.min.css')
-import('./libs/bootstrap.min.js')
-import('./libs/jquery.min.js')
-import('./libs/popper.min.js')
-// import('./libs/all.css')
+import './css/style.css'
+import './libs/bootstrap.min.css'
+import './libs/bootstrap.min.js'
+import './libs/jquery.min.js'
+import './libs/popper.min.js'
+// import('./libs/all.css'
+import './js/main.js'

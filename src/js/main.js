@@ -1,3 +1,5 @@
+import $ from '../libs/jquery.min.js'
+import '../isotope/isotope.min.js'
 $(document).ready(function(){
 
   // select the button
