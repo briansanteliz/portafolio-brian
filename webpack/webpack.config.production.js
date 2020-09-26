@@ -6,7 +6,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-
+/* FALTA CONFIGURAR WEBPACK CON LA CARACTERISITICAS DE PWA,
+    CONFIGURAR Y PROBAR SI JQUERY FUNCIONA CON EL WEBPACK.PROVIDER (SINO DEJARLO CON LA CDN),
+    CONFGURAR LOS MODULOS HTTP, SEGUIR CON EL DISEÑO Y REVISAR SI FUNCIONAN 
+    OWL.CAROUSEL & POPUP.
+*/
 module.exports = {
   optimization: {
     minimize: true,
