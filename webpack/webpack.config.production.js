@@ -134,11 +134,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/style.css",
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery',
+    //   'window.jQuery': 'jquery'
+    // }),
     new CopyWebpackPlugin({
       patterns: assets.map((asset) => {
         return {
